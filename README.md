@@ -1,31 +1,42 @@
 # OS_project
 
 
-This project is a C written application designed to keep records of folders by storing details about them in order to help the user keeping track of what modifications have been made to the contents of the folders.The application can run on both Windows and Linux machines.
+This project is a C-based program designed to monitor and track modifications to the contents of specified folders. It can generate snapshots of directories and compare them, enabling the user to detect changes in files, such as modifications, deletions, and permission changes. Files deemed unsafe can be moved to a quarantine directory for further analysis.
+
+## Features
+Snapshot Creation: Creates snapshots of the contents of directories, capturing file names, permissions, modification times, and other file attributes.
+Snapshot Comparison: Compares two snapshots to detect changes in the contents or metadata of files.
+Quarantine System: Automatically analyzes files, and if they are deemed unsafe, moves them to an isolated quarantine directory.
+Process Forking: Uses child processes to handle snapshot creation, file analysis, and quarantine management, allowing concurrent operations.
+
+##Requirements
+C Compiler: GCC or any other standard C compiler.
+POSIX-compliant Operating System: Linux or macOS (for proper directory and file management).
+Bash Script: This program assumes the existence of an external script (script.sh) for analyzing files to determine if they are safe or need to be quarantined.
+
+##Instalation
+Clone the repository:
+git clone https://github.com/your-username/folder-modification-tracker.git
+Compile the code:
+gcc -o FolderTracker main.c workingWithFile.h
+Make sure the bash script is inside the folder that contains the code and execute:
+./FolderTracker -o <output_dir> -s izolated_space_dir <dir1> <dir2> ...
 
 
 ## Usage
-In order to use this application you need a Windows/Linux machine that have
+The program requires several command-line arguments:
 
+    -o: Specifies the output directory where the snapshot files will be stored.
+    -s: Specifies the quarantine directory where unsafe files will be moved.
+    dir1, dir2, ...: List of directories to monitor and track for changes.
+Example: ./FolderTracker -o OutputDir -s quarantineDir folder1 folder2 folder3
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+Arguments:
+OutputDir: Directory to store snapshots.
+quarantineDir: Directory where unsafe files are moved.
+folder1, folder2, ...: Folders to track for changes.
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
 
 ## License
-For open source projects, say how it is licensed.
+This is an open-source project made in academic purpose as a project in one of my computer-science faculty subjects.
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
