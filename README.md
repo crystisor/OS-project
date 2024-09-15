@@ -10,17 +10,17 @@ Quarantine System: Automatically analyzes files, and if they are deemed unsafe, 
 Process Forking: Uses child processes to handle snapshot creation, file analysis, and quarantine management, allowing concurrent operations.
 
 ##Requirements
-C Compiler: GCC or any other standard C compiler.
-POSIX-compliant Operating System: Linux or macOS (for proper directory and file management).
-Bash Script: This program assumes the existence of an external script (script.sh) for analyzing files to determine if they are safe or need to be quarantined.
+    C Compiler: GCC or any other standard C compiler.
+    POSIX-compliant Operating System: Linux or macOS (for proper directory and file management).
+    Bash Script: This program assumes the existence of an external script (script.sh) for analyzing files to determine if they are safe or need to be quarantined.
 
 ##Instalation
-Clone the repository:
-git clone https://github.com/your-username/folder-modification-tracker.git
-Compile the code:
-gcc -o FolderTracker main.c workingWithFile.h
-Make sure the bash script is inside the folder that contains the code and execute:
-./FolderTracker -o <output_dir> -s izolated_space_dir <dir1> <dir2> ...
+    Clone the repository:
+    git clone https://github.com/your-username/folder-modification-tracker.git
+    Compile the code:
+    gcc -o FolderTracker main.c workingWithFile.h
+    Make sure the bash script is inside the folder that contains the code and execute:
+    ./FolderTracker -o <output_dir> -s izolated_space_dir <dir1> <dir2> ...
 
 
 ## Usage
@@ -31,10 +31,10 @@ The program requires several command-line arguments:
     dir1, dir2, ...: List of directories to monitor and track for changes.
 Example: ./FolderTracker -o OutputDir -s quarantineDir folder1 folder2 folder3
 
-Arguments:
-OutputDir: Directory to store snapshots.
-quarantineDir: Directory where unsafe files are moved.
-folder1, folder2, ...: Folders to track for changes.
+    Arguments:
+    OutputDir: Directory to store snapshots.
+    quarantineDir: Directory where unsafe files are moved.
+    folder1, folder2, ...: Folders to track for changes.
 
 
 ## License
