@@ -19,7 +19,7 @@ Process Forking: Uses child processes to handle snapshot creation, file analysis
 # Instalation
 Clone the repository:
 
-    git clone https://github.com/your-username/folder-modification-tracker.git
+    git clone https://github.com/crystisor/OS-project.git
 Compile the code:
 
     gcc -o FolderTracker main.c workingWithFile.h
