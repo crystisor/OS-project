@@ -1,7 +1,22 @@
+in [Section `Features`](#feature)
+
+## Feature
+
+
 # OS_project
 
 
 This project is a C-based program designed to monitor and track modifications to the contents of specified folders. It can generate snapshots of directories and compare them, enabling the user to detect changes in files, such as modifications, deletions, and permission changes. Files deemed unsafe can be moved to a quarantine directory for further analysis.
+
+# Table of Contents
+- [Features](#features)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+  - Example
+  - Arguments
+  - Bash Script
+- [License](#license)
 
 # Features
 Snapshot Creation: Creates snapshots of the contents of directories, capturing file names, permissions, modification times, and other file attributes.
@@ -16,7 +31,7 @@ Process Forking: Uses child processes to handle snapshot creation, file analysis
 
 * Bash Script: This program assumes the existence of an external script (script.sh) for analyzing files to determine if they are safe or need to be quarantined.
 
-# Instalation
+# Installation
 Clone the repository:
 
     git clone https://github.com/crystisor/OS-project.git
@@ -56,7 +71,8 @@ This script performs a series of checks on a file passed as a command-line argum
     The script first checks if the provided argument is a valid, regular file.
 * File properties: 
     It calculates the number of characters, words, and lines in the file.
-* Non-ASCII Character Check
+* Non-ASCII Character Check:
+    Check for non-ASCII characters.
 * Keyword Search: 
     The script searches for specific malicious words like "corrupted", "dangerous", "risk", "attack", "malware", and "malicious". If any of these words are detected, the file is marked as unsafe.
 * Permissions: 
@@ -65,4 +81,3 @@ This script performs a series of checks on a file passed as a command-line argum
 
 # License
 This is an open-source project made in academic purpose as a project in one of my computer-science faculty subjects.
-
