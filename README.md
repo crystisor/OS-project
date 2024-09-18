@@ -1,4 +1,4 @@
-# OS_project
+# OS Folder Tracker
 
 
 This project is a C-based program designed to monitor and track modifications to the contents of specified folders. It can generate snapshots of directories and compare them, enabling the user to detect changes in files, such as modifications, deletions, and permission changes. Files deemed unsafe can be moved to a quarantine directory for further analysis.
